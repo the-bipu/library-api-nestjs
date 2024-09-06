@@ -20,37 +20,36 @@
       }
     </style>
   </head>
-  <body
-    class="w-full h-auto flex items-center justify-center py-10 bg-[#f2f2f2]"
-  >
-    <div class="flex flex-col w-11/12 h-auto gap-4">
+  <body class="w-full h-auto flex items-center justify-center p-5 bg-[#f2f2f2]">
+    <div class="flex flex-col w-full h-auto gap-4">
       <div class="flex flex-col gap-1">
         <div class="text-3xl font-bold text-[#333333]">
           Library API Documentation
         </div>
         <p class="text-lg">Welcome to the Bored API by the App Brewery.</p>
       </div>
-      <div class="flex flex-col bg-[#fff] py-10 px-6">
+
+      <div class="flex flex-col bg-[#fff] p-6 rounded">
         <h3 class="text-[#ff7f50] text-2xl font-bold mb-3">Get a Book</h3>
         <p class="text-[#888] mb-2">
-          Returns a randomly selected activity from the available activities.
+          Use this endpoint to retrieve a list of available books.
         </p>
         <p class="text-[#888] font-semibold mb-2">Example Request:</p>
         <div
-          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4"
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 mb-2"
         >
           <span class="text-[#228b22]">GET</span>
           <span class="space-mono"
             >https://library-api-nestjs.vercel.app/book</span
           >
         </div>
-        <p class="text-[#888] font-semibold mb-2">Example Request:</p>
+        <p class="text-[#888] font-semibold mb-2">Example Response:</p>
         <pre
           class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 space-mono"
         >
 [
     {
-        "_id": "66d7545c9cbcf47613976b1a",
+        "_id": "book-id",
         "title": "Next Js",
         "description": "This is the start of Nest Js.",
         "author": "Me",
@@ -60,8 +59,169 @@
         "updatedAt": "2024-09-05T18:08:06.513Z",
         "__v": 0
     },
-]
-        </pre>
+]</pre
+        >
+      </div>
+
+      <div class="flex flex-col bg-[#fff] p-6 rounded">
+        <h3 class="text-[#ff7f50] text-2xl font-bold mb-3">Post a Book</h3>
+        <p class="text-[#888] mb-2">
+          Use this endpoint to post a new book to the library system.
+        </p>
+        <p class="text-[#888] font-semibold mb-2">Example Request:</p>
+        <div
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 mb-2"
+        >
+          <span class="text-[#228b22]">POST</span>
+          <span class="space-mono"
+            >https://library-api-nestjs.vercel.app/book</span
+          >
+        </div>
+        <p class="text-[#888] font-semibold mb-2">Example Request:</p>
+        <pre
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 mb-2 space-mono"
+        >
+{
+    "title": "Next Js",
+    "description": "This is the start of Nest Js.",
+    "author": "Me",
+    "price": "99",
+    "category": "Fantasy"
+}</pre
+        >
+        <p class="text-[#888] font-semibold mb-2">Example Response:</p>
+        <pre
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 space-mono"
+        >
+{
+    "title": "Aurelia Js",
+    "description": "This is the start of Nest Js.",
+    "author": "Me",
+    "price": 99,
+    "category": "Fantasy",
+    "_id": "66dad93057b8c16a03d72e30",
+    "createdAt": "2024-09-06T10:28:00.771Z",
+    "updatedAt": "2024-09-06T10:28:00.771Z",
+    "__v": 0
+}</pre
+        >
+      </div>
+
+      <div class="flex flex-col bg-[#fff] p-6 rounded">
+        <h3 class="text-[#ff7f50] text-2xl font-bold mb-3">Get a Book by ID</h3>
+        <p class="text-[#888] mb-2">
+          Use this endpoint to retrieves details of a specific book by its ID.
+        </p>
+        <p class="text-[#888] font-semibold mb-2">Example Request:</p>
+        <div
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 mb-2"
+        >
+          <span class="text-[#228b22]">GET</span>
+          <span class="space-mono"
+            >https://library-api-nestjs.vercel.app/book/book-id</span
+          >
+        </div>
+        <p class="text-[#888] font-semibold mb-2">Example Response:</p>
+        <pre
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 space-mono"
+        >
+{
+    "_id": "book-id",
+    "title": "Next Js",
+    "description": "This is the start of Nest Js.",
+    "author": "Me",
+    "price": 99,
+    "category": "Fantasy",
+    "createdAt": "2024-09-03T18:24:28.650Z",
+    "updatedAt": "2024-09-05T18:08:06.513Z",
+    "__v": 0
+}</pre
+        >
+      </div>
+
+      <div class="flex flex-col bg-[#fff] p-6 rounded">
+        <h3 class="text-[#ff7f50] text-2xl font-bold mb-3">Update a Book</h3>
+        <p class="text-[#888] mb-2">
+          Use this endpoint to update a book in the library system.
+        </p>
+        <p class="text-[#888] font-semibold mb-2">Example Request:</p>
+        <div
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 mb-2"
+        >
+          <span class="text-[#228b22]">PUT</span>
+          <span class="space-mono"
+            >https://library-api-nestjs.vercel.app/book</span
+          >
+        </div>
+        <p class="text-[#888] font-semibold mb-2">Example Request:</p>
+        <pre
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 mb-2 space-mono"
+        >
+{
+    "description": "This is the description.",
+    "price": "299"
+}</pre
+        >
+        <p class="text-[#888] font-semibold mb-2">Example Response:</p>
+        <pre
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 space-mono"
+        >
+{
+    "_id": "book-id",
+    "title": "Aurelia",
+    "description": "This is the description.",
+    "author": "Me",
+    "price": 299,
+    "category": "Fantasy",
+    "createdAt": "2024-09-03T18:24:28.650Z",
+    "updatedAt": "2024-09-06T10:51:21.091Z",
+    "__v": 0
+}</pre
+        >
+      </div>
+
+      <div class="flex flex-col bg-[#fff] p-6 rounded">
+        <h3 class="text-[#ff7f50] text-2xl font-bold mb-3">
+          Delete a Book by ID
+        </h3>
+        <p class="text-[#888] mb-2">
+          Use this endpoint to deelte a specific book by its ID.
+        </p>
+        <p class="text-[#888] font-semibold mb-2">Example Request:</p>
+        <div
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 mb-2"
+        >
+          <span class="text-[#228b22]">DELETE</span>
+          <span class="space-mono"
+            >https://library-api-nestjs.vercel.app/book/book-id</span
+          >
+        </div>
+        <p class="text-[#888] font-semibold mb-2">Example Response:</p>
+        <pre
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 space-mono"
+        >
+{
+    "_id": "book-id",
+    "title": "Next Js",
+    "description": "This is the start of Nest Js.",
+    "author": "Me",
+    "price": 99,
+    "category": "Fantasy",
+    "createdAt": "2024-09-03T18:24:28.650Z",
+    "updatedAt": "2024-09-05T18:08:06.513Z",
+    "__v": 0
+}</pre
+        >
+      </div>
+
+      <div>
+        Copyright ©
+        <a
+          href="https://github.com/the-bipu/library-api-nestjs"
+          target="_blank"
+          class="text-[#ff7f50] underline"
+          >the-bipu</a
+        >
       </div>
     </div>
   </body>
