@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .space-mono {
+        font-family: 'Space Mono', monospace;
+      }
+    </style>
+  </head>
+  <body
+    class="w-full h-auto flex items-center justify-center py-10 bg-[#f2f2f2]"
+  >
+    <div class="flex flex-col w-11/12 h-auto gap-4">
+      <div class="flex flex-col gap-1">
+        <div class="text-3xl font-bold text-[#333333]">
+          Library API Documentation
+        </div>
+        <p class="text-lg">Welcome to the Bored API by the App Brewery.</p>
+      </div>
+      <div class="flex flex-col bg-[#fff] py-10 px-6">
+        <h3 class="text-[#ff7f50] text-2xl font-bold mb-3">Get a Book</h3>
+        <p class="text-[#888] mb-2">
+          Returns a randomly selected activity from the available activities.
+        </p>
+        <p class="text-[#888] font-semibold mb-2">Example Request:</p>
+        <div
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4"
+        >
+          <span class="text-[#228b22]">GET</span>
+          <span class="space-mono"
+            >https://library-api-nestjs.vercel.app/book</span
+          >
+        </div>
+        <p class="text-[#888] font-semibold mb-2">Example Request:</p>
+        <pre
+          class="bg-[#f2f2f2] rounded px-4 py-2 border border-[#ddd] flex flex-row gap-4 space-mono"
+        >
+[
+    {
+        "_id": "66d7545c9cbcf47613976b1a",
+        "title": "Next Js",
+        "description": "This is the start of Nest Js.",
+        "author": "Me",
+        "price": 99,
+        "category": "Fantasy",
+        "createdAt": "2024-09-03T18:24:28.650Z",
+        "updatedAt": "2024-09-05T18:08:06.513Z",
+        "__v": 0
+    },
+]
+        </pre>
+      </div>
+    </div>
+  </body>
+</html>
